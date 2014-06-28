@@ -1,0 +1,155 @@
+* {
+	padding:0;
+	margin:0;
+}
+.greenBox {
+	width:776px;
+	height:472px;
+	margin:0 auto;
+	margin-top:100px;
+	font-family:Arial, Helvetica, sans-serif;
+	position:relative;
+}
+/*------------------------------
+	Step-1 Ball Animation
+------------------------------*/
+.stepOnebox {
+	width:100%;
+	height:100%;
+	overflow: hidden;
+	position: relative;
+}
+.stepOnecon {
+	background:url(../img/green-bg.jpg) no-repeat 0 0;
+	width:100%;
+	height:100%;
+	position: absolute;
+	z-index:3;
+	display: none;
+}
+
+.stepOnecon .playerOne {
+	position:absolute;
+	left:330px;
+	top:95px;
+}
+.stepOnecon .textBox {
+	position:absolute;
+	left:167px;
+	top:48px;
+	width:158px;
+	height:95px;
+	padding:22px 40px 0 40px;
+	background:url(../img/bubble.png) no-repeat 50% 0;
+	color:#000;
+	font-size:14px;
+	line-height:18px;
+	text-align:center;
+	font-weight:bold;
+}
+.stepOnecon .textBox span {
+	color:#13cf13;
+}
+.stepOnecon .ball {
+	position:absolute;
+	left:109px;
+	top:194px;
+	width:77px;
+	height:77px;
+	z-index:3;
+}
+.stepOnecon .ball img {
+	width:100%;
+	height:auto;
+}
+.stepOnecon .logosec {
+	position:absolute;
+	left:372px;
+	bottom:54px;
+}
+.ballanimation {
+	position:absolute;
+	left:108px;
+	top:192px;
+	z-index:2;
+	opacity:1;
+}
+
+
+/*------------------------------------------
+	Step-2 Animation with text and image
+------------------------------------------*/
+
+.stepTwobox {
+	background: none repeat scroll 0 0 #3FA535;
+    border-radius: 14px;
+	width:5%;
+	height:472px;
+	overflow: hidden;
+	position: relative;
+	display:none;
+	left: 50%;
+	/*background:url(../img/green-left.jpg) no-repeat 0 0;*/
+	/*position:absolute;*/
+	/*left:50%;*/
+	/*top:0;
+	*/
+}
+.showBox {
+	display:block;
+	opacity:1;
+}
+.stepTwobox .rightSide {
+	background:url(../img/green-right.jpg) no-repeat 0 0;
+	width:28px;
+	top:0;
+	bottom:0;
+	right:0;
+	position:absolute;
+}
+
+.stepTwocon{
+	position:relative;
+	z-index:4;
+	margin:40px 0 0 48px;
+	/*background:#FFFFCC;*/
+	width:700px;
+	height:426px;
+	/*overflow:hidden;*/
+}
+.leftLogo {
+    left: -27px;
+    position: absolute;
+    top: -41px;
+    z-index: 999;
+}
+ul.r-tabs-nav {
+    background-color: #86C57F;
+    border-bottom: 1px solid #44AA3A;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    top: -21px;
+    width: 50%;
+}
+ul.r-tabs-nav:before {
+    background: url(../img/rectangle.png) no-repeat 0 0;
+    bottom: 0;
+    content: "";
+    height: 20px;
+    left: -20px;
+    position: absolute;
+    width: 20px;
+}
+.r-tabs-nav .r-tabs-tab a.r-tabs-anchor {
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+

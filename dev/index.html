@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Grasshopper Soccer</title>
+        <!-- Stylesheet -->
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/mainstyle.css" rel="stylesheet" type="text/css" />
+        <link href="css/responsive-tabs.css" rel="stylesheet" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+        <!-- jQuery Liabrary -->
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.responsiveTabs.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <!-- Script for Tab -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#horizontalTab').responsiveTabs({
+                    startCollapsed: 'accordion',
+                    //collapsible: true,
+                    rotate: false,
+                    //setHash: true,
+                    animation: 'fade'
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/themes/base/jquery-ui.css" type="text/css" media="all" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="greenBox">
+            <!-- Step One Start -->
+            <div class="stepOnebox">
+                <div class="stepOnebox">
+                    <div class='ballanimation'><img src="img/ball.png" alt="ball" id="ballanimation"/></div>
+                    <div class="stepOnecon">
+                        <div class="ball"><a href="javascript:void(0)" id="platbntone"><img src="img/ball.png" alt="ball" /></a></div>
+                        <div class="playerOne"><img src="img/player-1.png" alt="" /></div>
+                        <div class="textBox">Welcome to your discovery portal. <span>Click</span> on the ball to start.</div>
+                        <div class="logosec"><img src="img/logo-1.jpg" alt="ball" /></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Step One End -->
+            <!-- Step Two Start -->
+            <div class="stepTwobox">
+                <div class="rightSide"></div>
+                <div class="stepTwocon">
+                    <div class="leftLogo"><a href="#"><img src="img/logo-small.jpg" alt="" /></a></div>
+                    <!-- tab section start -->
+                    <div id="horizontalTab">
+                        <ul>
+                            <li><a href="#tab-1" data-number="1">Step 1</a></li>
+                            <li><a href="#tab-2" data-number="2">Step 2</a></li>
+                            <li><a href="#tab-3" data-number="3">Step 3</a></li>
+                            <li><a href="#tab-4" data-number="4">Step 4</a></li>
+                            <li><a href="#tab-5" data-number="5">Step 5</a></li>
+                        </ul>
+                        <div id="tab-1" tab-count="1">
+                            <section class="slider">
+                                <div class="fontIntroMessage">
+                                    <h2>IT'S A GOAL</h2>
+                                    <p>By wanting to discover more about Grasshopper Soccer you have already kicked a goal! <br>
+                                    Congratulations! <br>
+                                    Now it's time to get a little more serious. <br>
+                                    Is Grasshopper Soccer the right business for you and your family? <br>
+                                    Only one way to find out.</p>
+                                    <p><span class="green">Click</span> on the players to find out the facts.</p>
+                                </div>
+                                <div id="slider" class="customSlider"  style="display:none;">
+                                    <ul class="slides">
+                                        <li style="left:0; top:0">
+                                            <div class="image01"> <img src="images/slide1.png" alt=""> </div>
+                                            <div class="sliderText01 slideText">
+                                                <p>Grasshopper Soccer established their unique programs in 1990 in the Brentwood area of Western Australia.</p>
+                                            </div>
+                                            <div class="firstLine"> <img src="images/first-line.png" alt=""> </div>
+                                        </li>
+                                        <li style="left:-700px; top:-428px">
+                                            <div class="image02"> <img src="images/slide2.png" alt=""> </div>
+                                            <div class="sliderText02  slideText">
+                                                <p>Grasshopper Soccer was the first company to provide non-competitive soccar coaching for children aged 2 to 12 by creating programs that were lots of fun and that any child could participate in, no matter what their soccer experience.</p>
+                                            </div>
+                                            <div class="secondLine"> <img src="images/second-line.png" alt=""> </div>
+                                        </li>
+                                        <li style="left:-1400px; top:-856px;">
+                                            <div class="image03"> <img src="images/slide3.png" alt=""> </div>
+                                            <div class="sliderText03 slideText">
+                                                <p>We are proud that we are Australia's #1 non-competitive soccer program.</p>
+                                            </div>
+                                            <div class="thirdLine"> <img src="images/third-line.png" alt=""> </div>
+                                        </li>
+                                        <li style="left:-2100px; top:-1284px">
+                                            <div class="image04"> <img src="images/slide4.png" alt=""> </div>
+                                            <div class="sliderText04 slideText">
+                                                <p>Grasshopper Soccer began franchising in 2008 and from its humble beginnings in Perth is now across Australia in Sydney, Melbourne, Brisbane, Adelaide and NOW in New Zealand!</p>
+                                            </div>
+                                        </li>
+                                        <li style="left:-2800px; top:-1712px">
+                                            <div class="image05"> <img src="images/slide5.png" alt=""> </div>
+                                            <div class="sliderText05 slideText">
+                                                <p>By pushing for constant innovation, we are able to stay ahead of the curve and provide our franchisees with the competitive edge to succeed in children's soccer programs.</p>
+                                            </div>
+                                        </li>
+                                        <li style="left:-3500px; top:-2140px">
+                                            <div class="image06"> <img src="images/slide6.png" alt=""> </div>
+                                            <div class="sliderText06 slideText">
+                                                <p>Grasshopper Soccer established their unique programs in 1990 in the Brentwood area of Western Australia.</p>
+                                            </div>
+                                            <div class="sixthLine"> <img src="images/sixth-line.png" alt=""> </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="carousel">
+                                    <ul class="slides thumbSlide">
+                                        <li><img src="images/navi-01.png" alt="" class="slideThumb"></li>
+                                        <li><img src="images/navi-02.png" alt="" class="slideThumb"></li>
+                                        <li><img src="images/navi-03.png" alt="" class="slideThumb"></li>
+                                        <li><img src="images/navi-04.png" alt="" class="slideThumb"></li>
+                                        <li><img src="images/navi-05.png" alt="" class="slideThumb"></li>
+                                        <li><img src="images/navi-06.png" alt="" class="slideThumb"></li>
+                                    </ul>
+                                </div>
+                                <div class="nextBtn">
+                                    <a href="javascript:void(0)" title="" class="nextTab" data-tabnumber="1"><img src="images/next-button.png" alt=""></a> 
+                                </div>
+                            </section>
+                        </div>
+                        <div id="tab-2"  tab-count="2">
+                            <div class="seventhLine">
+                                <img src="images/seventh-line.png" alt="">
+                            </div>
+                            <div class="introMessage">
+                                <h2>Your workplace is the Great Aussie Outdoors!</h2>
+                                <p>Forget the 9-5 claustrophobia of an indoor office - with Grasshopper Soccer you can enjoy the outdoors whilst you are pleasing the kids and your pocket! <br> <span class="green">Click</span> on the players to see what they reveal.</p>
+                            </div>
+                            <div class="firstPlayer player">
+                                <img src="images/player-1.png" alt="">
+                            </div>
+                            <div class="firstMessage message">
+                                <p>We believe that kids deserve to learn soccer in a fun, safe environment.</p>
+                            </div>
+                            <div class="secondPlayer player">
+                                <img src="images/player-2.png" height="132" width="81" alt="">
+                            </div>
+                            <div class="secondMessage message">
+                                <p>We believe Grasshopper Soccer is a great business concept.</p>
+                            </div>
+                            <div class="thirdPlayer player">
+                                <img src="images/player-3.png" height="121" width="125" alt="">
+                            </div>
+                            <div class="thirdMessage message">
+                                <p>We believe that there is nothing else out there like Grasshopper Soccer.</p>
+                            </div>
+                            <div class="fourthPlayer player">
+                                <img src="images/player-4.png" height="119" width="79" alt="">
+                            </div>
+                            <div class="fourthMessage message">
+                                <p>We believe that kids should be active every day.</p>
+                            </div>
+                            <div class="lastMessage message">
+                                <p>If you want to learn more about what we believe in, what we do and how you can be a part of it, please click Next to fill out the remainder of the information form and we will be in touch with you shortly.</p>
+                            </div>
+                            <div class="nextBtn">
+                                <a href="javascript:void(0)" title="" class="nextTab"  data-tabnumber="2"><img src="images/next-button.png" alt=""></a> 
+                            </div>
+                        </div>
+                        <div id="tab-3"  tab-count="3">
+                            <div class="firstOption" style="display:none;">
+                                <div class="fieldBoder">
+                                    <img src="images/field-boder.png" height="432" width="826" alt="">
+                                </div>
+                                <div class="footBallAnimate">
+                                    <img src="images/football.png" height="64" width="64" alt="">
+                                </div>
+                            </div>
+                            <div class="secondOption" style="display:none;" >
+                                <div class="wrap">
+                                    <h2>Grasshopper Soccer Wants Talent!!</h2>
+                                    <p>Do you have it? <br>
+                                        We are seeking enthusiast, talented, dedicated and fun-loving people to join Grasshopper Soccer.<br>
+                                        Have you got what it takes?
+                                    </p>
+                                    <h4>Check the key success factors:</h4>
+                                    <ul>
+                                        <li class="soccerForm"><a href="javascript:void(0)">Are you socially active in the community?</a></li>
+                                        <li class="soccerForm"><a href="javascript:void(0)">Do you have a passion for working with children and parents?</a></li>
+                                    </ul>
+                                    <h4>Do you excel in:</h4>
+                                    <ul>
+                                        <li class="soccerForm"><a href="javascript:void(0)">Customer Service?</a></li>
+                                        <li class="soccerForm"><a href="javascript:void(0)">Operations?</a></li>
+                                        <li class="soccerForm"><a href="javascript:void(0)">Marketing?</a></li>
+                                        <li class="soccerForm"><a href="javascript:void(0)">Management?</a></li>
+                                    </ul>
+                                    <div class="summitBtn">
+                                        <a href="javascript:void(0)" title="" id="thirdStepSubmit"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thirdOption">
+                                <div class="wrap">
+                                    <h2>Your Score: </h2>
+                                    <p>7 out of 7 <br> Excellent, don't hesitate, call Blake Brinklowon 1300 669 006</p>
+                                    <br>
+                                    <p>5 - 6 out of 7 <br> The good thing about Grasshopper Soccer is that we can train you in those areas where you may need a little help. Contact us = we'd love to chat to you further about your future with Grasshopper Soccer.</p>
+                                    <br>
+                                    <p>3 - 4 out of 7 <br> Perhaps you really need to think about whether this is the right type of businessfor you, but by all means contact us, we'd be happy to tell you a little more about what this franchise has to offer and what we are looking for</p>
+                                    <div class="nextBtn">
+                                        <a href="javascript:void(0)" title="" class="nextTab" data-tabnumber="3"><img src="images/next-button.png" alt="" ></a> 
+                                    </div>
+                                    <div class="prevBtn">
+                                        <a href="javascript:void(0)" title="" id="thirdStepPrev"><img src="images/prev.png" height="52" width="40" alt=""></a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-4"  tab-count="4">
+                            <section class="sliderTwo">
+                                <div class="secondIntroMessage">
+                                    <h2>You're On the Home Run</h2>
+                                    <p>We've setup a special discovery process do that you can determine whether <br> Grasshopper Soccer is the right investment for you and your family.</p>
+                                    <p><span class="green">Click</span> on the players to find out the facts.</p>
+                                </div>
+                                <div id="sliderTwo" class="customSliderTwo" style="display:none;">
+                                    <ul class="slidesTwo">
+                                        <li style="left:0; top:0;">
+                                            <div class="image07"> <img src="images/slide6.png" alt=""> </div>
+                                            <div class="sliderText07 slideTextTwo">
+                                                <p>1. At the end of this section, complete our information form.</p>
+                                            </div>
+                                            <div class="SeventhLine"> <img src="images/seventh-line2.png" height="145" width="72"> </div>
+                                        </li>
+                                        <li style="left:-700px; top:-428px;">
+                                            <div class="image08"> <img src="images/slide8.png" alt=""> </div>
+                                            <div class="sliderText08 slideTextTwo">
+                                                <p>2. You will be contacted by a Grasshopper Soccer representive to take you through the discovery process. Your Grasshopper Soccer representive will answer any questions you may have throughout this discovery process.</p>
+                                            </div>
+                                            <div class="eighthLine"> <img src="images/eighth-line.png" height="146" width="64"> </div>
+                                        </li>
+                                        <li style="left:-1400px; top:-856px;">
+                                            <div class="image09"> <img src="images/slide3.png" alt=""> </div>
+                                            <div class="sliderText09 slideTextTwo">
+                                                <p>3. Review our Franchise Disclosure Document.</p>
+                                            </div>
+                                            <div class="ninethLine"> <img src="images/third-line.png" alt=""> </div>
+                                        </li>
+                                        <li style="left:-2100px; top:-1284px;">
+                                            <div class="image10"> <img src="images/slide10.png" alt=""> </div>
+                                            <div class="sliderText10 slideTextTwo">
+                                                <p>4. Validation stage where we will guide you through the proposed territory, pro forma, financing matters, and validation calls with current grasshopper Soccer franchisees.</p>
+                                            </div>
+                                            <div class="tenthLine"> <img src="images/tenth-line.png" height="148" width="42" alt=""> </div>
+                                        </li>
+                                        <li style="left:-2800px; top:-1712px;">
+                                            <div class="image11"> <img src="images/slide11.png" alt=""> </div>
+                                            <div class="sliderText11 slideTextTwo">
+                                                <p>5. Sign the Franchise Agreement and prepare for Training.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="carouselTwo">
+                                    <ul class="slidesTwo">
+                                        <li><img src="images/navi-06.png" alt="" class="slideThumb_four"></li>
+                                        <li><img src="images/navi-08.png" alt="" class="slideThumb_four"></li>
+                                        <li><img src="images/navi-03.png" alt="" class="slideThumb_four"></li>
+                                        <li><img src="images/navi-10.png" alt="" class="slideThumb_four"></li>
+                                        <li><img src="images/navi-11.png" alt="" class="slideThumb_four"></li>
+                                    </ul>
+                                </div>
+                                 <div class="nextBtn">
+                                    <a href="javascript:void(0)" title="" class="nextTab" data-tabnumber="4"><img src="images/next-button.png" alt="" ></a> 
+                                </div>
+                            </section>
+                        </div>
+                        <div id="tab-5"  tab-count="5">
+                            <div class="optionThree">
+                                <div class="footBallTwo">
+                                    <img src="images/football.png" height="74" width="74" alt="">
+                                </div>
+                            </div>
+                            <div class="optionFour" style="display:none;">
+                                <div class="wrap">
+                                    <h2>Information Form</h2>
+                                    <p>Request more information about our franchise opportunities with Grasshopper Soccer!</p>
+                                    <br>
+                                    <p>Thank you for expressing an interest in our franchise oppourtunity and for taking the first step towards building your own organisation. Please send us some initial information so we can start you into the journey of investigating this exciting concept.</p>
+                                    <br>
+                                    <p><span class="green">Click</span> next to get started.</p>
+                                    <div class="nextBtn">
+                                        <a href="javascript:void(0)" title="" class="nextTab" data-tabnumber="5"><img src="images/next-button.png" alt="" ></a> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- tab section end -->
+                    </div>
+                </div>
+            <!-- Step Two End -->
+            </div>
+            <div class="imagesLoad">
+                <img src="images/bg.png">
+                <img src="images/eighth-line.png">
+                <img src="images/field-boder.png">
+                <img src="images/first-line.png">
+                <img src="images/football-icon.png">
+                <img src="images/football.png">
+                <img src="images/fourth-tab-bg.png">
+                <img src="images/last-tab-bg.png">
+                <img src="images/navi-01.png">
+                <img src="images/navi-02.png">
+                <img src="images/navi-03.png">
+                <img src="images/navi-04.png">
+                <img src="images/navi-05.png">
+                <img src="images/navi-06.png">
+                <img src="images/navi-08.png">
+                <img src="images/navi-10.png">
+                <img src="images/navi-11.png">
+                <img src="images/next-button.png">
+                <img src="images/nineth-line.png">
+                <img src="images/player-1.png">
+                <img src="images/player-2.png">
+                <img src="images/player-3.png">
+                <img src="images/player-4.png">
+                <img src="images/prev.png">
+                <img src="images/second-line.png">
+                <img src="images/second-tab-bg.png">
+                <img src="images/seventh-line.png">
+                <img src="images/seventh-line2.png">
+                <img src="images/sixth-line.png">
+                <img src="images/slide.png">
+                <img src="images/slide1.png">
+                <img src="images/slide2.png">
+                <img src="images/slide3.png">
+                <img src="images/slide4.png">
+                <img src="images/slide5.png">
+                <img src="images/slide6.png">
+                <img src="images/slide8.png">
+                <img src="images/slide10.png">
+                <img src="images/slide11.png">
+                <img src="images/submit.png">
+                <img src="images/tenth-line.png">
+                <img src="images/text-10.png">
+                <img src="images/text-11.png">
+                <img src="images/text-7.png">
+                <img src="images/text-8.png">
+                <img src="images/text-9.png">
+                <img src="images/text-bg-01.png">
+                <img src="images/text-bg-02.png">
+                <img src="images/text-bg-03.png">
+                <img src="images/text-bg-04.png">
+                <img src="images/text-bg-05.png">
+                <img src="images/text-bg-06.png">
+                <img src="images/text-bg-07.png">
+                <img src="images/text-bg-08.png">
+                <img src="images/text-bg-09.png">
+                <img src="images/text-bg-10.png">
+                <img src="images/text-bg-11.png">
+                <img src="images/text-bg-12.png">
+                <img src="images/third-line.png">
+                <img src="images/third-tab-oneBg.png">
+                <img src="images/third-tab-twoBg.jpg">
+                <img src="img/bubble.png">
+                <img src="img/green-bg.jpg">
+                <img src="img/green-right.jpg">
+                <img src="img/logo-1.jpg">
+                <img src="img/logo-small.jpg">
+                <img src="img/player-1.png">
+                <img src="img/rectangle.png">
+                <img src="img/text-bg-1.png">
+                <img src="images/intro-text-bg.png">
+                <img src="images/intro-text-bg2.png">
+            </div>
+        </div>
+        
+        <!--responsive version -->
+        <div class="smallVersion">
+        	<div class="levelOne" >
+            	<div class="ballanimation"><img src="img/ball.png" alt="ball" id="ballanimation"/></div>
+                <div class="secondStep">
+                	<div class="secondStepCBox"></div>
+                    <div class="ball"><a href="javascript:void(0)" id="platbntone"><img src="img/ball.png" alt="ball" /></a></div>
+                    <div class="playerOne"><img src="img/player-1.png" alt="" /></div>
+                    <div class="messAge">
+                    	<div class="textBox">Welcome to your discovery portal. <span class="green">Click</span> on the ball to start.</div>
+                    </div>
+                    <div class="logosec"><img src="img/logo-1.jpg" alt="ball" /></div>
+                </div>
+            </div>
+            <div class="levelTwo">
+            	<div class="wrapper">
+                	<div class="logo">
+                    	<img src="img/logo-small.jpg" width="111" height="40" alt="">
+                    </div>
+                    
+                    <div class="tabsection">
+                        <div class="tablist">
+                            <ul class="tabs">
+                                <li><a href="#">Step 1</a></li>
+                                <li><a href="#">Step 2</a></li>
+                                <li><a href="#">Step 3</a></li>
+                                <li><a href="#">Step 4</a></li>
+                                <li><a href="#">Step 5</a></li>
+                            </ul>
+                        </div>
+                    <div class="tabcontainer">
+                        <div class="tabBox">
+                        	<div class="welcomeMessage">
+                            	<div class="innerWrap">
+                                	<h2>IT'S A GOAL</h2>
+                                    <p>By wanting to discover more about Grasshopper Soccer you have already kicked a goal! <br>
+                                      Congratulations! <br>
+                                      Now it's time to get a little more serious. <br>
+                                      Is Grasshopper Soccer the right business for you and your family? <br>
+                                      Only one way to find out.</p>
+                                    <p><span class="green">Click</span> on the players to find out the facts.</p>
+                                </div>  
+                            </div>
+                            <div class="slierOne">
+                            	<ul>
+                                	<li>
+                                    	<div class="image01"> <img alt="" src="images/slide1.png"> </div>
+                                        <div class="messageText">
+                                        	<p>Grasshopper Soccer established their unique programs in 1990 in the Brentwood area of Western Australia.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    	<div class="image01"> <img alt="" src="images/slide2.png"> </div>
+                                        <div class="messageText">
+                                            <p>Grasshopper Soccer was the first company to provide non-competitive soccar coaching for children aged 2 to 12 by creating programs that were lots of fun and that any child could participate in, no matter what their soccer experience.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    	<div class="image01"> <img alt="" src="images/slide3.png"> </div>
+                                        <div class="messageText">
+                                            <p>We are proud that we are Australia's #1 non-competitive soccer program.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    	<div class="image01"> <img alt="" src="images/slide4.png"> </div>
+                                        <div class="messageText">
+                                            <p>Grasshopper Soccer began franchising in 2008 and from its humble beginnings in Perth is now across Australia in Sydney, Melbourne, Brisbane, Adelaide and NOW in New Zealand!</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    	<div class="image01"> <img alt="" src="images/slide5.png"> </div>
+                                        <div class="messageText">
+                                            <p>By pushing for constant innovation, we are able to stay ahead of the curve and provide our franchisees with the competitive edge to succeed in children's soccer programs.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                    	<div class="image01"> <img alt="" src="images/slide6.png"> </div>
+                                        <div class="messageText">
+                                            <p>Grasshopper Soccer established their unique programs in 1990 in the Brentwood area of Western Australia.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="SliderThumbOne">
+                            	<ul>
+                                  <li><img class="slideThumb" alt="" src="images/navi-01.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-02.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-03.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-04.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-05.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-06.png"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tabBox">
+                            <div class="welcomeMessage">
+                                <div class="innerWrap">
+                                    <h2>Your workplace is the Great Aussie Outdoors!</h2>
+                                    <p>Forget the 9-5 claustrophobia of an indoor office - with Grasshopper Soccer you can enjoy the outdoors whilst you are pleasing the kids and your pocket!</p>
+                                    <p><span class="green">Click</span> on the players to see what they reveal.</p>
+                                </div>  
+                            </div>
+                            <div class="slierOne newSlideR">
+                                <ul>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/player-1.png"> </div>
+                                        <div class="messageText">
+                                            <p>We believe that kids deserve to learn soccer in a fun, safe environment.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/player-2.png"> </div>
+                                        <div class="messageText">
+                                            <p>We believe Grasshopper Soccer is a great business concept.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/player-3.png"> </div>
+                                        <div class="messageText">
+                                            <p>We believe that there is nothing else out there like Grasshopper Soccer.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/player-4.png"> </div>
+                                        <div class="messageText">
+                                            <p>We believe that kids should be active every day.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="exitMessage">
+                                <div class="innerWrap">
+                                    <p>If you want to learn more about what we believe in, what we do and how you can be a part of it, please click Next to fill out the remainder of the information form and we will be in touch with you shortly.</p>
+                                </div>  
+                            </div>
+                            <div class="SliderThumbOne">
+                                <ul>
+                                  <li><img class="slideThumb" alt="" src="images/player-1.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/player-2.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/player-3.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/player-4.png"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tabBox">
+                            <div class="footballKick">
+                                <div class="fieldBoder">
+                                    <img width="826" height="432" alt="" src="images/field-boder.png">
+                                </div>
+                                <div class="footbalKickAnimate">
+                                    <img src="images/football.png" height="64" width="64" alt="">
+                                </div>
+                            </div>
+                            <div class="formSectionOne">
+                                <h2>Grasshopper Soccer Wants Talent!!</h2>
+                                <p>Do you have it? <br>
+                                    We are seeking enthusiast, talented, dedicated and fun-loving people to join Grasshopper Soccer.<br>
+                                    Have you got what it takes?
+                                </p>
+                                <h4>Check the key success factors:</h4>
+                                <ul>
+                                    <li class="soccerForm"><a href="javascript:void(0)">Are you socially active in the community?</a></li>
+                                    <li class="soccerForm"><a href="javascript:void(0)">Do you have a passion for working with children and parents?</a></li>
+                                </ul>
+                                <h4>Do you excel in:</h4>
+                                <ul>
+                                    <li class="soccerForm"><a href="javascript:void(0)">Customer Service?</a></li>
+                                    <li class="soccerForm"><a href="javascript:void(0)">Operations?</a></li>
+                                    <li class="soccerForm"><a href="javascript:void(0)">Marketing?</a></li>
+                                    <li class="soccerForm"><a href="javascript:void(0)">Management?</a></li>
+                                </ul>
+                                <div class="summitBtn2">
+                                    <a id="thirdStepSubmit" title="" href="javascript:void(0)"><img src="images/submit.png" height="106" width="40" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="formSectionTwo">
+                                <h2>Your Score: </h2>
+                                <p>7 out of 7 <br> Excellent, don't hesitate, call Blake Brinklowon 1300 669 006</p>
+                                <br>
+                                <p>5 - 6 out of 7 <br> The good thing about Grasshopper Soccer is that we can train you in those areas where you may need a little help. Contact us = we'd love to chat to you further about your future with Grasshopper Soccer.</p>
+                                <br>
+                                <p>3 - 4 out of 7 <br> Perhaps you really need to think about whether this is the right type of businessfor you, but by all means contact us, we'd be happy to tell you a little more about what this franchise has to offer and what we are looking for</p>
+                                <div class="btnGroup">
+                                    <div class="nextBtn">
+                                        <a title="" href="#"><img alt="" src="images/next-button.png"></a> 
+                                    </div>
+                                    <div class="prevBtn">
+                                        <a id="thirdStepPrev" title="" href="#"><img width="40" height="52" alt="" src="images/prev.png"></a> 
+                                    </div>
+                                </div>
+                                    
+                            </div>
+                        </div>
+                        <div class="tabBox">
+
+                            <div class="welcomeMessage">
+                                <div class="innerWrap">
+                                    <h2>You're On the Home Run</h2>
+                                    <p>We've setup a special discovery process do that you can determine whether Grasshopper Soccer is the right investment for you and your family.</p>
+                                    <p><span class="green">Click</span> on the players to find out the facts.</p>
+                                </div>  
+                            </div>
+                            <div class="slierOne">
+                                <ul>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/slide6.png"> </div>
+                                        <div class="messageText">
+                                            <p>1. At the end of this section, complete our information form.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/slide8.png"> </div>
+                                        <div class="messageText">
+                                            <p>2. You will be contacted by a Grasshopper Soccer representive to take you through the discovery process. Your Grasshopper Soccer representive will answer any questions you may have throughout this discovery process.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/slide3.png"> </div>
+                                        <div class="messageText">
+                                            <p>3. Review our Franchise Disclosure Document.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/slide10.png"> </div>
+                                        <div class="messageText">
+                                            <p>4. Validation stage where we will guide you through the proposed territory, pro forma, financing matters, and validation calls with current grasshopper Soccer franchisees.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="image01"> <img alt="" src="images/slide11.png"> </div>
+                                        <div class="messageText">
+                                            <p>5. Sign the Franchise Agreement and prepare for Training.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="SliderThumbOne">
+                                <ul>
+                                  <li><img class="slideThumb" alt="" src="images/navi-06.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-08.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-03.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-10.png"></li>
+                                  <li><img class="slideThumb" alt="" src="images/navi-11.png"></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="tabBox">
+                            <div class="footballKick2">
+                                <div class="footballKick2animation">
+                                    <img src="images/football.png" width="70" height="70" alt="">
+                                </div>
+                            </div>
+                            <div class="formSectionThree">
+                                <h2>Information Form</h2>
+                                <p>Request more information about our franchise opportunities with Grasshopper Soccer!</p>
+                                <br>
+                                <p>Thank you for expressing an interest in our franchise oppourtunity and for taking the first step towards building your own organisation. Please send us some initial information so we can start you into the journey of investigating this exciting concept.</p>
+                                <br>
+                                <p><span class="green">Click</span> next to get started.</p>
+                                <div class="nextBtn">
+                                    <a title="" href="#"><img alt="" src="images/next-button.png"></a> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    	<script>
+		$(function(){
+		$(".tabsection").each(function(index, element) {
+			var $this = $(this);
+			
+			var tabliscon = $this.find(".tablist"); 
+			var tabcon = $this.find(".tabcontainer");
+			
+			tabliscon.find("li").removeClass("activeTab");
+			tabliscon.find("li:first").addClass("activeTab");
+			
+			tabcon.find(".tabBox").fadeOut();
+			tabcon.find(".tabBox:first").fadeIn();
+			
+			tabliscon.find("a").click(function(e){
+				e.preventDefault();
+			})
+			
+			tabliscon.find("li").click(function(){
+				if(!$(this).hasClass('activeTab')){
+					   var gi = $(this).index();
+					   // alert(gi);
+					   tabliscon.find("li").removeClass("activeTab");
+					   $(this).addClass("activeTab");
+					   tabcon.find(".tabBox").hide();
+					   tabcon.find(".tabBox:eq("+gi+")").fadeIn();
+					 }
+				})
+			});
+		});
+		</script>
+
+</html>
