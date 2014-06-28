@@ -22,6 +22,9 @@ var initiateStepOne = (function() {
 	$("#tab-1 .firstSlider .slider").css({
 		"display" : "none"
 	});
+	$("#tab-1 .firstSlider .slider ul").css({
+		width : ($("#tab-1 .firstSlider .slider ul li:eq(1)").width()*$("#tab-1 .firstSlider .slider ul li").length) +"px"
+	});
 	$("#tab-1 .firstSlider .fontIntroMessage").css({
 		"opacity" : "0"
 	});
@@ -29,12 +32,26 @@ var initiateStepOne = (function() {
 		"opacity" : "1"
 	},1000);
 	$("#tab-1 .firstSlider .thumb .slides li").unbind('click');
+	$("#tab-1 .firstSlider .thumb .slides li").attr('justclicked','0');
 	$("#tab-1 .firstSlider .thumb .slides li").on('click', function(event) {
-		var thumbIndex = $("#tab-1 .firstSlider .thumb .slides li").index(event.currentTarget);
-		alert(thumbIndex);
+		if($(this).attr('justclicked') == "0") {
+			var thumbIndex = $("#tab-1 .firstSlider .thumb .slides li").index(event.currentTarget);
+			moveContent(thumbIndex);	
+		}
+		
 	});
 });
 
+var moveContent = (function(index) {
+	if(!$("#tab-1 .firstSlider .slider").is(":visible")) {
+		$("#tab-1 .firstSlider .fontIntroMessage").css({
+			"display" : "none"
+		});
+		$("#tab-1 .firstSlider .slider").css({
+			"display" : "block"
+		});
+	}
+});
 //step one functionality finished
 
 var initiateStepTwo = (function(){
