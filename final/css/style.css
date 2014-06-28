@@ -186,6 +186,7 @@ span.green{
 	.slider ul li{
 		min-height: 428px;
 		position: relative;
+		float: left;
 	}
 	.image01 {
 		left: 21px;
