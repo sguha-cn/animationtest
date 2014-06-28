@@ -162,6 +162,7 @@ span.green{
 	}
 	.r-tabs-panel{
 		min-height: 428px;
+		overflow: hidden;
 	}
 	.fontIntroMessage{
 		background: url(../images/intro-text-bg.png) no-repeat 0 0;
