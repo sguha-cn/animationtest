@@ -21,8 +21,13 @@ var changeTab = (function(event) {
 var timerforStepOne = null;
 var indexForStepOne = 0;
 var initiateStepOne = (function() {
+	indexForStepOne = 0;
+	timerforStepOne = null;
 	$("#tab-1 .firstSlider .slider").css({
 		"display" : "none"
+	});
+	$("#tab-1 .slideText").css({
+		"left"    : (parseInt($(".secondStep").width())/2.5) + "px"
 	});
 	$("#tab-1 .firstSlider .slider ul").css({
 		width : ($("#tab-1 .firstSlider .slider ul li:eq(1)").width()*$("#tab-1 .firstSlider .slider ul li").length) +"px"
@@ -31,6 +36,7 @@ var initiateStepOne = (function() {
 		"opacity" : "0.5"
 	});
 	$("#tab-1 .firstSlider .fontIntroMessage").css({
+		"display" : "block",
 		"opacity" : "0"
 	});
 	$("#tab-1 .firstSlider .fontIntroMessage").animate({
@@ -50,8 +56,12 @@ var initiateStepOne = (function() {
 				indexForStepOne = 0;
 			}
 			moveContent(indexForStepOne);
-		},5000);
+		},10000);
 	}
+	$("#tab-1 .nextTab").unbind('click');
+	$("#tab-1 .nextTab").on('click', function() {
+		initiateStepTwo();
+	});
 });
 
 var slideSliderOne = (function(index) {
@@ -73,14 +83,32 @@ var slideSliderOne = (function(index) {
 		presentElement.css({
 			"left" : "-100%"
 		});
-
+		$(".slideText", presentElement).css({
+			"display" : "none"
+		});
 		$("#tab-1 .firstSlider .slider ul li:eq("+index+")").css({
 			"left" : "-100%"
 		});
 		$("#tab-1 .firstSlider .slider ul li:eq("+index+")").animate({
 			"left" : "0"
 		}, 1000, function() {
-			$("#tab-1 .firstSlider .thumb .slides li").attr('justclicked', 0);
+			$(".slideText", this).css({
+				"display" : "block"
+			});
+			var top = $(".slideText", this).css('top');
+			$(".slideText", this).css({
+				"top" : "-100%"
+			});
+			$(".slideText", this).animate({
+				"top" : top
+			},{
+				"duration" : 300,
+        		"easing" : 'easeOutBounce',
+        		"complete" : function() {
+					$("#tab-1 .firstSlider .thumb .slides li").attr('justclicked', 0);	
+				}
+			});
+			
 		});
 	});
 });
@@ -95,7 +123,7 @@ var moveContent = (function(index) {
 				});
 				$("#tab-1 .firstSlider .slider ul li").css({
 					"position" : "absolute",
-					"left"     : (-1)*parseInt($("#tab-1").width()) + "px"
+					"left"     : (-1)*parseInt($(".secondStep").width()) + "px"
 				});
 				$("#tab-1 .firstSlider .slider ul li:eq(0)").css({
 					"left" : "0px"
