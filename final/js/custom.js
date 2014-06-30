@@ -1,6 +1,12 @@
 var changeTab = (function (event) {
     if (!event.handled) {
         event.handled = true;
+        if(typeof timerforStepOne != "undefined" && timerforStepOne != null) {
+        	window.clearInterval(timerforStepOne);
+        }
+        if(typeof timerforStepFour != "undefined" && timerforStepFour != null) {
+        	window.clearInterval(timerforStepFour);
+        }
         var href = $.trim($(event.currentTarget).attr('href'));
         if (href == "#tab-1") {
             initiateStepOne();
