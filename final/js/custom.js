@@ -20,6 +20,9 @@ var changeTab = (function (event) {
 var timerforStepOne = null;
 var indexForStepOne = 0;
 var initiateStepOne = (function () {
+	if(typeof timerforStepFour != "undefined" && timerforStepFour != null) {
+		window.clearInterval(timerforStepFour);
+	}
     indexForStepOne = 0;
     timerforStepOne = null;
     $("#tab-1 .firstSlider .slider").css({
@@ -352,9 +355,132 @@ var initiateStepThree = (function () {
 });
 //step three functionality finished
 
+//step four functionality strts
+var timerforStepFour = null;
+var indexForStepFour = 0;
 var initiateStepFour = (function () {
-
+	if(typeof timerforStepOne != "undefined" && timerforStepOne != null) {
+		window.clearInterval(timerforStepOne);
+	}
+    indexForStepFour = 0;
+    timerforStepFour = null;
+    $("#tab-4 .secondSlider .slider").css({
+        "display": "none"
+    });
+    $("#tab-4 .slideText").css({
+        "left": (parseInt($(".secondStep").width()) / 2.5) + "px"
+    });
+    $("#tab-4 .secondSlider .slider ul").css({
+        width: ($("#tab-4 .secondSlider .slider ul li:eq(1)").width() * $("#tab-4 .secondSlider .slider ul li").length) + "px"
+    });
+    $("#tab-4 .secondSlider .thumb .slides li").css({
+        "opacity": "0.5"
+    });
+    $("#tab-4 .secondSlider .secondIntroMessage").css({
+        "display": "block",
+        "opacity": "0"
+    });
+    $("#tab-4 .secondSlider .secondIntroMessage").animate({
+        "opacity": "1"
+    }, 1000);
+    $("#tab-4 .secondSlider .thumb .slides li").unbind('click');
+    $("#tab-4 .secondSlider .thumb .slides li").attr('justclicked', '0');
+    $("#tab-4 .secondSlider .thumb .slides li").on('click', function (event) {
+        var thumbIndex = $("#tab-4 .secondSlider .thumb .slides li").index(event.currentTarget);
+        indexForStepFour = thumbIndex;
+        moveContentForStepFour(thumbIndex);
+    });
+    if (timerforStepFour == null) {
+        timerforStepFour = window.setInterval(function () {
+            indexForStepFour += 1;
+            if (indexForStepFour > 4) {
+                indexForStepFour = 0;
+            }
+            moveContentForStepFour(indexForStepFour);
+        }, 10000);
+    }
+    $("#tab-4 .nextTab").unbind('click');
+    $("#tab-4 .nextTab").on('click', function () {
+        $("#horizontalTab ul li a[href='#tab-5']").trigger('click');
+    });
 });
+
+var slideSliderFour = (function (index) {
+    $("#tab-4 .secondSlider .thumb .slides li").css({
+        "opacity": "0.5"
+    });
+    $("#tab-4 .secondSlider .thumb .slides li:eq(" + index + ")").css({
+        "opacity": "1"
+    });
+    var presentElement;
+    $("#tab-4 .secondSlider .slider ul li").each(function () {
+        if ($(this).css('left') == "0px") {
+            presentElement = $(this);
+        }
+    });
+    presentElement.animate({
+        "left": "100%"
+    }, 1000, function () {
+        presentElement.css({
+            "left": "-100%"
+        });
+        // $(".slideText", presentElement).css({
+        //     "display": "none"
+        // });
+        $("#tab-4 .secondSlider .slider ul li:eq(" + index + ")").css({
+            "left": "-100%"
+        });
+        $("#tab-4 .secondSlider .slider ul li:eq(" + index + ")").animate({
+            "left": "0"
+        }, 1000, function () {
+            $(".slideText", this).css({
+                "display": "block"
+            });
+            var top = $(".slideText", this).css('top');
+            $(".slideText", this).css({
+                "top": "-100%"
+            });
+            $(".slideText", this).animate({
+                "top": top
+            }, {
+                "duration": 300,
+                "easing": 'easeOutBounce',
+                "complete": function () {
+                    $("#tab-4 .secondSlider .thumb .slides li").attr('justclicked', 0);
+                }
+            });
+
+        });
+    });
+});
+
+var moveContentForStepFour = (function (index) {
+    if ($("#tab-4 .secondSlider .thumb .slides li:eq(0)").attr('justclicked') == "0") {
+        $("#tab-4 .secondSlider .thumb .slides li").attr('justclicked', 1);
+        if (!$("#tab-4 .secondSlider .slider").is(":visible")) {
+            $("#tab-4 .secondSlider .secondIntroMessage").fadeOut('slow', function () {
+                $("#tab-4 .secondSlider .slider").css({
+                    "display": "block"
+                });
+                $("#tab-4 .secondSlider .slider ul li").css({
+                    "position": "absolute",
+                    "left": (-1) * parseInt($(".secondStep").width()) + "px"
+                });
+                $("#tab-4 .secondSlider .slider ul li:eq(0)").css({
+                    "left": "0px"
+                });
+                $(".slideText").css({
+                    "display": "none"
+                });
+                slideSliderFour(index)
+            });
+        } else {
+            slideSliderFour(index);
+        }
+    }
+});
+//step four functionality finished
+
 var initiateStepFive = (function () {
 
 });
