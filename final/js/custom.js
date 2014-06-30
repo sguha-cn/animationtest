@@ -570,6 +570,26 @@ $(document).ready(function () {
         changeTab(event);
     });
     pulse();
+    var windowWidth = parseInt($(window).width());
+	if(windowWidth<768) {
+		$("#tab-1,#tab-4").css({
+			"min-height" : "600px"
+		});
+		$("div[id='tab-2']").css({
+			"min-height" : "1500px"
+		});
+	}
+    $(window).resize(function() {
+    	var windowWidth = parseInt($(window).width());
+    	if(windowWidth<768) {
+    		$("#tab-1,#tab-4").css({
+    			"min-height" : "600px"
+    		});
+    		$("div[id='tab-2']").css({
+				"min-height" : "1500px"
+			});
+    	}
+    });
 });
 $(window).load(function () {
 	$("a.r-tabs-anchor").on('click', function (event) {
@@ -579,7 +599,7 @@ $(window).load(function () {
 		pulse = (function(){return false;});
        $(".welcomePannel").fadeIn("slow", function() {
        		$(".welcomePannel .football").unbind('click');
-       		$(".welcomePannel .football").on('click', function() {console.log("x");
+       		$(".welcomePannel .football").on('click', function() {
        			$(".welcomePannel .player").fadeOut('slow');
        			$(".welcomePannel .football").fadeOut('slow');
        			$(".welcomePannel .logo").fadeOut('slow', function() {
@@ -594,12 +614,13 @@ $(window).load(function () {
 					$("#horizontalTab ul li a[href='#tab-1']").trigger('click');
 					var secondStepWidth = $(".secondStep").width();
 					$(".secondStep").css({
-						
 						"width"   :"0px"
 					});
 					$(".secondStep").animate({
 						"width"   : secondStepWidth + "px"
-					},1000, function(){});
+					},1000, function(){
+						$(".secondStep").removeAttr('style');
+					});
        			});
        		});
        });
