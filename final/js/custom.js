@@ -587,6 +587,9 @@ $(document).ready(function () {
 		$("div[id='tab-2']").css({
 			"min-height" : "1500px"
 		});
+		$(".thumb").css({
+			"padding-top" : "500px"
+		});
 	}
     $(window).resize(function() {
     	var windowWidth = parseInt($(window).width());
@@ -594,8 +597,12 @@ $(document).ready(function () {
     		$("#tab-1,#tab-4").css({
     			"min-height" : "600px"
     		});
+
     		$("div[id='tab-2']").css({
 				"min-height" : "1500px"
+			});
+			$(".thumb").css({
+				"padding-top" : "500px"
 			});
     	}
     });
