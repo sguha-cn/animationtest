@@ -1,15 +1,18 @@
 var changeTab = (function (event) {
-    var href = $.trim($(event.currentTarget).attr('href'));
-    if (href == "#tab-1") {
-        initiateStepOne();
-    } else if (href == "#tab-2") {
-        initiateStepTwo();
-    } else if (href == "#tab-3") {
-        initiateStepThree();
-    } else if (href == "#tab-4") {
-        initiateStepFour();
-    } else if (href == "#tab-5") {
-        initiateStepFive();
+	if(!event.handled) {
+		event.handled = true;
+	    var href = $.trim($(event.currentTarget).attr('href'));
+	    if (href == "#tab-1") {
+	        initiateStepOne();
+	    } else if (href == "#tab-2") {
+	        initiateStepTwo();
+	    } else if (href == "#tab-3") {
+	        initiateStepThree();
+	    } else if (href == "#tab-4") {
+	        initiateStepFour();
+	    } else if (href == "#tab-5") {
+	        initiateStepFive();
+	    }
     }
 });
 
@@ -271,9 +274,84 @@ var initiateStepTwo = (function () {
 });
 //step two functionality finished
 
+//step three functionality begins
+var animateFirstOption = function () {
+    var rightStringArray = $(".footBallAnimate").css('right').split('px');
+    var right = parseInt(rightStringArray[0]);
+    var width = $("#tab-3 .footBallAnimate img").width();
+    var height = $("#tab-3 .footBallAnimate img").height();
+    if (height == 0) {
+      height = parseInt($("#tab-3 .footBallAnimate img").attr('height'));
+    }
+    right = right * 3;
+    $("#tab-3 .footBallAnimate img").animate({
+      "width": (width * 3) + "px",
+      "height": (height * 3) + "px"
+    }, 500);
+    $("#tab-3 .footBallAnimate").animate({
+      "right": right + "px",
+      "top": "30px",
+    }, 500, function () {
+      $("#tab-3 .footBallAnimate").animate({
+        "right": -parseInt($("#tab-3 .firstOption").width()) + "px",
+        "top": "20px",
+        "opacity": "0.1"
+      }, 500, function () {});
+      $("#tab-3 .footBallAnimate img").animate({
+        "width": (width * 30) + "px",
+        "height": (height * 30) + "px"
+      }, 500, function () {
+        $("#tab-3 .firstOption").css({
+          "display": "none"
+        });
+        $("#tab-3 .secondOption").css({
+          "display": "block"
+        });
+      });
+    });
+  }
 var initiateStepThree = (function () {
-
+	$("#tab-3 .secondOption,#tab-3 .thirdOption").css({
+		display : "none"
+	});
+	$("#tab-3 .firstOption").removeAttr('style');
+    $("#tab-3 .footBallAnimate").removeAttr('style');
+    $("#tab-3 .footBallAnimate  img").removeAttr('style');
+    $("#tab-3 #thirdStepSubmit").unbind('click');
+    $("#tab-3 #thirdStepSubmit").on('click', function() {
+    	$("#tab-3 .secondOption").css({
+          "display": "none"
+        });
+        $("#tab-3 .thirdOption").css({
+          "display": "block"
+        });
+    });
+    $("#tab-3 #thirdStepPrev").unbind('click');
+    $("#tab-3 #thirdStepPrev").on('click', function() {
+    	$("#tab-3 .secondOption").css({
+          "display": "block"
+        });
+        $("#tab-3 .thirdOption").css({
+          "display": "none"
+        });
+    });
+    $("#tab-3 .nextTab").unbind('click');
+    $("#tab-3 .nextTab").on('click', function () {
+        $("#horizontalTab ul li a[href='#tab-4']").trigger('click');
+    });
+    $("#tab-3 .soccerForm a").unbind('click');
+    $("#tab-3 .soccerForm a").on('click', function(event){
+    	if($(event.currentTarget).hasClass('active')) {
+    		$(event.currentTarget).removeClass('active')
+    	}
+    	else {
+    		$(event.currentTarget).addClass('active')
+    	}
+    })
+	animateFirstOption();
 });
+//step three functionality finished
+
 var initiateStepFour = (function () {
 
 });
@@ -286,4 +364,9 @@ $(document).ready(function () {
         changeTab(event);
     });
 
+});
+$(window).load(function() {
+	$("a.r-tabs-anchor").on('click', function(event){
+		changeTab(event);
+	})
 });
