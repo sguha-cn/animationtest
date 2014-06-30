@@ -606,8 +606,6 @@ $(window).load(function () {
        				$(".welcomePannel").css({
 						"display" : "none"
 					});
-					
-					
 					$(".secondStep").css({
 						"display" : "block",
 					});
