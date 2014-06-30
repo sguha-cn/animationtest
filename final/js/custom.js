@@ -1,18 +1,18 @@
 var changeTab = (function (event) {
-	if(!event.handled) {
-		event.handled = true;
-	    var href = $.trim($(event.currentTarget).attr('href'));
-	    if (href == "#tab-1") {
-	        initiateStepOne();
-	    } else if (href == "#tab-2") {
-	        initiateStepTwo();
-	    } else if (href == "#tab-3") {
-	        initiateStepThree();
-	    } else if (href == "#tab-4") {
-	        initiateStepFour();
-	    } else if (href == "#tab-5") {
-	        initiateStepFive();
-	    }
+    if (!event.handled) {
+        event.handled = true;
+        var href = $.trim($(event.currentTarget).attr('href'));
+        if (href == "#tab-1") {
+            initiateStepOne();
+        } else if (href == "#tab-2") {
+            initiateStepTwo();
+        } else if (href == "#tab-3") {
+            initiateStepThree();
+        } else if (href == "#tab-4") {
+            initiateStepFour();
+        } else if (href == "#tab-5") {
+            initiateStepFive();
+        }
     }
 });
 
@@ -20,9 +20,9 @@ var changeTab = (function (event) {
 var timerforStepOne = null;
 var indexForStepOne = 0;
 var initiateStepOne = (function () {
-	if(typeof timerforStepFour != "undefined" && timerforStepFour != null) {
-		window.clearInterval(timerforStepFour);
-	}
+    if (typeof timerforStepFour != "undefined" && timerforStepFour != null) {
+        window.clearInterval(timerforStepFour);
+    }
     indexForStepOne = 0;
     timerforStepOne = null;
     $("#tab-1 .firstSlider .slider").css({
@@ -144,135 +144,132 @@ var moveContent = (function (index) {
 
 //step two functionality begins
 var initiateStepTwo = (function () {
-	$("#tab-2 .nextTab").unbind('click');
+    $("#tab-2 .nextTab").unbind('click');
     $("#tab-2 .nextTab").on('click', function () {
         $("#horizontalTab ul li a[href='#tab-3']").trigger('click');
     });
     $("#tab-2 .message,#tab-2 .lastMessage").css({
-        "display" : "none"
+        "display": "none"
     });
 
     $("#tab-2 .introMessage").css({
-    	"left"    : "-100%"
+        "left": "-100%"
     });
 
     $("#tab-2 .player").css({
-    	"opacity" : "0.6"
+        "opacity": "0.6"
     });
 
     $("#tab-2 .introMessage").animate({
-    	"left" : "0px"
-    }, 1000, function() {
-    	$("#tab-2 .player").attr('isclicked', 0);
-    	$("#tab-2 .player").unbind('click');
-    	$("#tab-2 .player").unbind('mouseenter');
-    	$("#tab-2 .player").unbind('mouseleave');
-    	$("#tab-2 .player").on('mouseenter', function(event) {
-			$("#tab-2 .player[isclicked='0']").css({
-	    		"opacity" : "0.6"
-	    	});
-	    	$(event.currentTarget).css({
-	    		"opacity" : "1"
-	    	});    		
-    	});
-    	$("#tab-2 .player").on('mouseleave', function(event) {
-			$(event.currentTarget).css({
-	    		"opacity" : "0.6"
-	    	});
-    	});
-    	$("#tab-2 .player").on('click', function(event){
-    		$(event.currentTarget).unbind('click');
-    		$(event.currentTarget).unbind('mouseenter');
-    		$(event.currentTarget).unbind('mouseleave');
-    		$(event.currentTarget).css({
-	    		"opacity" : "1"
-	    	});
-	    	$(event.currentTarget).attr('isclicked', '1');
-	    	if($(event.currentTarget).hasClass('firstPlayer')) {
-	    		var bottom = $("#tab-2 .firstMessage").css('bottom');
-	    		if(typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
-	    			bottom = 0;
-	    		}
-	    		$("#tab-2 .firstMessage").css({
-	    			"display" : "block",
-	    			"bottom"  : "100%"
-	    		});
-	    		$("#tab-2 .firstMessage").animate({
-	    			"bottom" : bottom 
-	    		},{
-	    			"duration": 300,
-                	"easing": 'easeOutBounce',
-	    		});
-	    	}
-	    	else if($(event.currentTarget).hasClass('secondPlayer')) {
-	    		var bottom = $("#tab-2 .secondMessage").css('bottom');
-	    		if(typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
-	    			bottom = 0;
-	    		}
-	    		$("#tab-2 .secondMessage").css({
-	    			"display" : "block",
-	    			"bottom"  : "100%"
-	    		});
-	    		$("#tab-2 .secondMessage").animate({
-	    			"bottom" : bottom 
-	    		},{
-	    			"duration": 300,
-                	"easing": 'easeOutBounce',
-	    		});
-	    	}
-	    	else if($(event.currentTarget).hasClass('thirdPlayer')) {
-	    		var bottom = $("#tab-2 .thirdMessage").css('bottom');
-	    		if(typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
-	    			bottom = 0;
-	    		}
-	    		$("#tab-2 .thirdMessage").css({
-	    			"display" : "block",
-	    			"bottom"  : "100%"
-	    		});
-	    		$("#tab-2 .thirdMessage").animate({
-	    			"bottom" : bottom 
-	    		},{
-	    			"duration": 300,
-                	"easing": 'easeOutBounce',
-	    		});
-	    	}
-	    	else if($(event.currentTarget).hasClass('fourthPlayer')) {
-	    		var bottom = $("#tab-2 .fourthMessage").css('bottom');
-	    		if(typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
-	    			bottom = 0;
-	    		}
-	    		$("#tab-2 .fourthMessage").css({
-	    			"display" : "block",
-	    			"bottom"  : "100%"
-	    		});
-	    		$("#tab-2 .fourthMessage").animate({
-	    			"bottom" : bottom 
-	    		},{
-	    			"duration": 300,
-                	"easing": 'easeOutBounce',
-	    		});
-	    	}
-	    	var flag = 1;
-	    	$("#tab-2 .message").each(function() {
-	    		if(!$(this).is(':visible')) {
-	    			flag = 0;
-	    		}
-	    	});
-	    	if(flag == 1) {
-	    		var bottom = $("#tab-2 .lastMessage").css('bottom');
-	    		$("#tab-2 .lastMessage").css({
-	    			"display" : "block",
-	    			"bottom"  : "100%"
-	    		});
-	    		$("#tab-2 .lastMessage").animate({
-	    			"bottom" : bottom 
-	    		},{
-	    			"duration": 300,
-                	"easing": 'easeOutBounce',
-	    		});
-	    	}
+        "left": "0px"
+    }, 1000, function () {
+        $("#tab-2 .player").attr('isclicked', 0);
+        $("#tab-2 .player").unbind('click');
+        $("#tab-2 .player").unbind('mouseenter');
+        $("#tab-2 .player").unbind('mouseleave');
+        $("#tab-2 .player").on('mouseenter', function (event) {
+            $("#tab-2 .player[isclicked='0']").css({
+                "opacity": "0.6"
+            });
+            $(event.currentTarget).css({
+                "opacity": "1"
+            });
+        });
+        $("#tab-2 .player").on('mouseleave', function (event) {
+            $(event.currentTarget).css({
+                "opacity": "0.6"
+            });
+        });
+        $("#tab-2 .player").on('click', function (event) {
+            $(event.currentTarget).unbind('click');
+            $(event.currentTarget).unbind('mouseenter');
+            $(event.currentTarget).unbind('mouseleave');
+            $(event.currentTarget).css({
+                "opacity": "1"
+            });
+            $(event.currentTarget).attr('isclicked', '1');
+            if ($(event.currentTarget).hasClass('firstPlayer')) {
+                var bottom = $("#tab-2 .firstMessage").css('bottom');
+                if (typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
+                    bottom = 0;
+                }
+                $("#tab-2 .firstMessage").css({
+                    "display": "block",
+                    "bottom": "100%"
+                });
+                $("#tab-2 .firstMessage").animate({
+                    "bottom": bottom
+                }, {
+                    "duration": 300,
+                    "easing": 'easeOutBounce',
+                });
+            } else if ($(event.currentTarget).hasClass('secondPlayer')) {
+                var bottom = $("#tab-2 .secondMessage").css('bottom');
+                if (typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
+                    bottom = 0;
+                }
+                $("#tab-2 .secondMessage").css({
+                    "display": "block",
+                    "bottom": "100%"
+                });
+                $("#tab-2 .secondMessage").animate({
+                    "bottom": bottom
+                }, {
+                    "duration": 300,
+                    "easing": 'easeOutBounce',
+                });
+            } else if ($(event.currentTarget).hasClass('thirdPlayer')) {
+                var bottom = $("#tab-2 .thirdMessage").css('bottom');
+                if (typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
+                    bottom = 0;
+                }
+                $("#tab-2 .thirdMessage").css({
+                    "display": "block",
+                    "bottom": "100%"
+                });
+                $("#tab-2 .thirdMessage").animate({
+                    "bottom": bottom
+                }, {
+                    "duration": 300,
+                    "easing": 'easeOutBounce',
+                });
+            } else if ($(event.currentTarget).hasClass('fourthPlayer')) {
+                var bottom = $("#tab-2 .fourthMessage").css('bottom');
+                if (typeof bottom == "undefined" || bottom == null || !bottom || bottom == 'auto') {
+                    bottom = 0;
+                }
+                $("#tab-2 .fourthMessage").css({
+                    "display": "block",
+                    "bottom": "100%"
+                });
+                $("#tab-2 .fourthMessage").animate({
+                    "bottom": bottom
+                }, {
+                    "duration": 300,
+                    "easing": 'easeOutBounce',
+                });
+            }
+            var flag = 1;
+            $("#tab-2 .message").each(function () {
+                if (!$(this).is(':visible')) {
+                    flag = 0;
+                }
+            });
+            if (flag == 1) {
+                var bottom = $("#tab-2 .lastMessage").css('bottom');
+                $("#tab-2 .lastMessage").css({
+                    "display": "block",
+                    "bottom": "100%"
+                });
+                $("#tab-2 .lastMessage").animate({
+                    "bottom": bottom
+                }, {
+                    "duration": 300,
+                    "easing": 'easeOutBounce',
+                });
+            }
 
-    	})
+        })
     });
 });
 //step two functionality finished
@@ -284,58 +281,58 @@ var animateFirstOption = function () {
     var width = $("#tab-3 .footBallAnimate img").width();
     var height = $("#tab-3 .footBallAnimate img").height();
     if (height == 0) {
-      height = parseInt($("#tab-3 .footBallAnimate img").attr('height'));
+        height = parseInt($("#tab-3 .footBallAnimate img").attr('height'));
     }
     right = right * 3;
     $("#tab-3 .footBallAnimate img").animate({
-      "width": (width * 3) + "px",
-      "height": (height * 3) + "px"
+        "width": (width * 3) + "px",
+        "height": (height * 3) + "px"
     }, 500);
     $("#tab-3 .footBallAnimate").animate({
-      "right": right + "px",
-      "top": "30px",
+        "right": right + "px",
+        "top": "30px",
     }, 500, function () {
-      $("#tab-3 .footBallAnimate").animate({
-        "right": -parseInt($("#tab-3 .firstOption").width()) + "px",
-        "top": "20px",
-        "opacity": "0.1"
-      }, 500, function () {});
-      $("#tab-3 .footBallAnimate img").animate({
-        "width": (width * 30) + "px",
-        "height": (height * 30) + "px"
-      }, 500, function () {
-        $("#tab-3 .firstOption").css({
-          "display": "none"
+        $("#tab-3 .footBallAnimate").animate({
+            "right": -parseInt($("#tab-3 .firstOption").width()) + "px",
+            "top": "20px",
+            "opacity": "0.1"
+        }, 500, function () {});
+        $("#tab-3 .footBallAnimate img").animate({
+            "width": (width * 30) + "px",
+            "height": (height * 30) + "px"
+        }, 500, function () {
+            $("#tab-3 .firstOption").css({
+                "display": "none"
+            });
+            $("#tab-3 .secondOption").css({
+                "display": "block"
+            });
         });
-        $("#tab-3 .secondOption").css({
-          "display": "block"
-        });
-      });
     });
-  }
+}
 var initiateStepThree = (function () {
-	$("#tab-3 .secondOption,#tab-3 .thirdOption").css({
-		display : "none"
-	});
-	$("#tab-3 .firstOption").removeAttr('style');
+    $("#tab-3 .secondOption,#tab-3 .thirdOption").css({
+        display: "none"
+    });
+    $("#tab-3 .firstOption").removeAttr('style');
     $("#tab-3 .footBallAnimate").removeAttr('style');
     $("#tab-3 .footBallAnimate  img").removeAttr('style');
     $("#tab-3 #thirdStepSubmit").unbind('click');
-    $("#tab-3 #thirdStepSubmit").on('click', function() {
-    	$("#tab-3 .secondOption").css({
-          "display": "none"
+    $("#tab-3 #thirdStepSubmit").on('click', function () {
+        $("#tab-3 .secondOption").css({
+            "display": "none"
         });
         $("#tab-3 .thirdOption").css({
-          "display": "block"
+            "display": "block"
         });
     });
     $("#tab-3 #thirdStepPrev").unbind('click');
-    $("#tab-3 #thirdStepPrev").on('click', function() {
-    	$("#tab-3 .secondOption").css({
-          "display": "block"
+    $("#tab-3 #thirdStepPrev").on('click', function () {
+        $("#tab-3 .secondOption").css({
+            "display": "block"
         });
         $("#tab-3 .thirdOption").css({
-          "display": "none"
+            "display": "none"
         });
     });
     $("#tab-3 .nextTab").unbind('click');
@@ -343,15 +340,14 @@ var initiateStepThree = (function () {
         $("#horizontalTab ul li a[href='#tab-4']").trigger('click');
     });
     $("#tab-3 .soccerForm a").unbind('click');
-    $("#tab-3 .soccerForm a").on('click', function(event){
-    	if($(event.currentTarget).hasClass('active')) {
-    		$(event.currentTarget).removeClass('active')
-    	}
-    	else {
-    		$(event.currentTarget).addClass('active')
-    	}
+    $("#tab-3 .soccerForm a").on('click', function (event) {
+        if ($(event.currentTarget).hasClass('active')) {
+            $(event.currentTarget).removeClass('active')
+        } else {
+            $(event.currentTarget).addClass('active')
+        }
     })
-	animateFirstOption();
+    animateFirstOption();
 });
 //step three functionality finished
 
@@ -359,9 +355,9 @@ var initiateStepThree = (function () {
 var timerforStepFour = null;
 var indexForStepFour = 0;
 var initiateStepFour = (function () {
-	if(typeof timerforStepOne != "undefined" && timerforStepOne != null) {
-		window.clearInterval(timerforStepOne);
-	}
+    if (typeof timerforStepOne != "undefined" && timerforStepOne != null) {
+        window.clearInterval(timerforStepOne);
+    }
     indexForStepFour = 0;
     timerforStepFour = null;
     $("#tab-4 .secondSlider .slider").css({
@@ -485,65 +481,128 @@ var moveContentForStepFour = (function (index) {
 var animateFifthOption = (function () {
     var leftStringArray = $("#tab-5 .footBallTwo").css('left').split('px');
     var left = parseInt(leftStringArray[0]);
-    if(left < 50) {
-    	left = (parseInt($("#horizontalTab").width())/2);
+    if (left < 50) {
+        left = (parseInt($("#horizontalTab").width()) / 2);
     }
     var width = $("#tab-5 .footBallTwo img").width();
     var height = $("#tab-5 .footBallTwo img").height();
     if (height == 0) {
-      height = parseInt($("#tab-5 .footBallTwo img").attr('height'));
+        height = parseInt($("#tab-5 .footBallTwo img").attr('height'));
     }
     left = left * 1.5;
     console.log("right ::" + left);
     $("#tab-5 .footBallTwo img").animate({
-      "width": (width * 2) + "px",
-      "height": (height * 2) + "px"
+        "width": (width * 2) + "px",
+        "height": (height * 2) + "px"
     }, 700);
     $("#tab-5 .footBallTwo").animate({
-      "left": left + "px",
-      "top": "170px",
+        "left": left + "px",
+        "top": "170px",
     }, 700, function () {
-      $("#tab-5 .footBallTwo").animate({
-        "left": "0px",
-        "top": "0px",
-        "opacity": "0"
-      }, 500, function () {});
-      $("#tab-5 .footBallTwo img").animate({
-        "width": (width * 10) + "px",
-        "height": (height * 10) + "px"
-      }, 500, function () {
-        $("#tab-5 .optionThree").css({
-          "display": "none"
-        });
-        $("#tab-5 .optionFour").css({
-          "display": "block"
-        });
-      })
+        $("#tab-5 .footBallTwo").animate({
+            "left": "0px",
+            "top": "0px",
+            "opacity": "0"
+        }, 500, function () {});
+        $("#tab-5 .footBallTwo img").animate({
+            "width": (width * 10) + "px",
+            "height": (height * 10) + "px"
+        }, 500, function () {
+            $("#tab-5 .optionThree").css({
+                "display": "none"
+            });
+            $("#tab-5 .optionFour").css({
+                "display": "block"
+            });
+        })
     });
-  });
+});
 var initiateStepFive = (function () {
-	$("#tab-5 .optionThree").removeAttr('style');
+    $("#tab-5 .optionThree").removeAttr('style');
     $("#tab-5 .footBallTwo").removeAttr('style');
     $("#tab-5 .footBallTwo  img").removeAttr('style');
     $("#tab-5 .optionThree").css({
-      "display": "block"
+        "display": "block"
     });
     $("#tab-5 .optionFour").css({
-      "display": "none"
+        "display": "none"
     });
     animateFifthOption();
 });
 //step five functionality ends
 
+//pulse functionality begins
+var pulseFlag = 0;
+var pulse = (function (width, height) {
+    $('.ballAnimation img').animate({
+        "width"   : ((typeof width!="undefined") ? width : 200) + "px",
+        "height"  : ((typeof height!="undefined") ? height : 200) + "px" ,
+        "opacity" : 1
+    }, 600, function () {
+        $('.ballAnimation img').animate({
+            width: 79,
+            height: 79,
+            opacity: 1
+        }, 500, function () {
+            pulseFlag++;
+            switch (pulseFlag) {
+            case 1:
+                pulse(150, 150, 500);
+                break;
+            case 2:
+                pulse(100, 100, 200);
+                break;
+            case 3:
+                pulseFlag = 0;
+                pulse();
+                //stepOnecon();
+            default:
+                pulse();
+            }
+        });
+    });
+});
+//pulse functionality ends
+
 $(document).ready(function () {
-    initiateStepOne();
+    //initiateStepOne();
     $("#horizontalTab ul li a").on('click', function (event) {
         changeTab(event);
     });
-
+    pulse();
 });
-$(window).load(function() {
-	$("a.r-tabs-anchor").on('click', function(event){
-		changeTab(event);
-	})
+$(window).load(function () {
+	$("a.r-tabs-anchor").on('click', function (event) {
+	    changeTab(event);
+	});
+	$(".ballAnimation").fadeOut("slow", function () {
+		pulse = (function(){return false;});
+       $(".welcomePannel").fadeIn("slow", function() {
+       		$(".welcomePannel .football").unbind('click');
+       		$(".welcomePannel .football").on('click', function() {console.log("x");
+       			$(".welcomePannel .player").fadeOut('slow');
+       			$(".welcomePannel .football").fadeOut('slow');
+       			$(".welcomePannel .logo").fadeOut('slow', function() {
+       				$(".welcomePannel").css({
+						"display" : "none"
+					});
+					
+					
+					$(".secondStep").css({
+						"display" : "block",
+					});
+					$("#horizontalTab ul li a[href='#tab-1']").trigger('click');
+					var secondStepWidth = $(".secondStep").width();
+					$(".secondStep").css({
+						
+						"width"   :"0px"
+					});
+					$(".secondStep").animate({
+						"width"   : secondStepWidth + "px"
+					},1000, function(){});
+       			});
+       		});
+       });
+	});
+	    
 });
