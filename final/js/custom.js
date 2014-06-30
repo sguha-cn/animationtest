@@ -621,6 +621,7 @@ $(window).load(function () {
 						"width"   : secondStepWidth + "px"
 					},1000, function(){
 						$(".secondStep").removeAttr('style');
+						$(window).trigger('resize');
 					});
        			});
        		});
