@@ -1,6 +1,7 @@
 /* tab and Accordian style */
 .r-tabs {
     position: relative;
+    overflow: hidden;
 }
 .r-tabs p{
     font-size: 16px;
