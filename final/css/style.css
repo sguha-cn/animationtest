@@ -105,6 +105,13 @@ span.green{
 	background: url(../images/last-tab-bg.png) no-repeat center 0;
 	height: 428px;
 }
+
+
+
+.thumb{
+	padding-top: 360PX;
+}
+
 @media (min-width: 768px) {
 	.packet{
 		background:#fff;

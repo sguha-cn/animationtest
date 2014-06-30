@@ -55,6 +55,8 @@ var initiateStepOne = (function () {
         timerforStepOne = window.setInterval(function () {
             indexForStepOne += 1;
             if (indexForStepOne > 5) {
+            	window.clearInterval(timerforStepOne);
+            	timerforStepOne = null;
             	$("#horizontalTab ul li a[href='#tab-2']").trigger('click');
             }
             moveContent(indexForStepOne);
@@ -390,6 +392,8 @@ var initiateStepFour = (function () {
         timerforStepFour = window.setInterval(function () {
             indexForStepFour += 1;
             if (indexForStepFour > 4) {
+            	window.clearInterval(timerforStepFour);
+            	timerforStepFour = null;
                 $("#horizontalTab ul li a[href='#tab-5']").trigger('click');
             }
             moveContentForStepFour(indexForStepFour);
@@ -617,6 +621,7 @@ $(window).load(function () {
 						"width"   : secondStepWidth + "px"
 					},1000, function(){
 						$(".secondStep").removeAttr('style');
+						$(window).trigger('resize');
 					});
        			});
        		});
