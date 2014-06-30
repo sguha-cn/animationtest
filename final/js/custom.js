@@ -481,9 +481,60 @@ var moveContentForStepFour = (function (index) {
 });
 //step four functionality finished
 
+//step five functionality begins
+var animateFifthOption = (function () {
+    var leftStringArray = $("#tab-5 .footBallTwo").css('left').split('px');
+    var left = parseInt(leftStringArray[0]);
+    if(left < 50) {
+    	left = (parseInt($("#horizontalTab").width())/2);
+    }
+    var width = $("#tab-5 .footBallTwo img").width();
+    var height = $("#tab-5 .footBallTwo img").height();
+    if (height == 0) {
+      height = parseInt($("#tab-5 .footBallTwo img").attr('height'));
+    }
+    left = left * 1.5;
+    console.log("right ::" + left);
+    $("#tab-5 .footBallTwo img").animate({
+      "width": (width * 2) + "px",
+      "height": (height * 2) + "px"
+    }, 700);
+    $("#tab-5 .footBallTwo").animate({
+      "left": left + "px",
+      "top": "170px",
+    }, 700, function () {
+      $("#tab-5 .footBallTwo").animate({
+        "left": "0px",
+        "top": "0px",
+        "opacity": "0"
+      }, 500, function () {});
+      $("#tab-5 .footBallTwo img").animate({
+        "width": (width * 10) + "px",
+        "height": (height * 10) + "px"
+      }, 500, function () {
+        $("#tab-5 .optionThree").css({
+          "display": "none"
+        });
+        $("#tab-5 .optionFour").css({
+          "display": "block"
+        });
+      })
+    });
+  });
 var initiateStepFive = (function () {
-
+	$("#tab-5 .optionThree").removeAttr('style');
+    $("#tab-5 .footBallTwo").removeAttr('style');
+    $("#tab-5 .footBallTwo  img").removeAttr('style');
+    $("#tab-5 .optionThree").css({
+      "display": "block"
+    });
+    $("#tab-5 .optionFour").css({
+      "display": "none"
+    });
+    animateFifthOption();
 });
+//step five functionality ends
+
 $(document).ready(function () {
     initiateStepOne();
     $("#horizontalTab ul li a").on('click', function (event) {
