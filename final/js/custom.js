@@ -55,7 +55,7 @@ var initiateStepOne = (function () {
         timerforStepOne = window.setInterval(function () {
             indexForStepOne += 1;
             if (indexForStepOne > 5) {
-                indexForStepOne = 0;
+            	$("#horizontalTab ul li a[href='#tab-2']").trigger('click');
             }
             moveContent(indexForStepOne);
         }, 10000);
@@ -390,7 +390,7 @@ var initiateStepFour = (function () {
         timerforStepFour = window.setInterval(function () {
             indexForStepFour += 1;
             if (indexForStepFour > 4) {
-                indexForStepFour = 0;
+                $("#horizontalTab ul li a[href='#tab-5']").trigger('click');
             }
             moveContentForStepFour(indexForStepFour);
         }, 10000);
@@ -565,7 +565,6 @@ var pulse = (function (width, height) {
 //pulse functionality ends
 
 $(document).ready(function () {
-    //initiateStepOne();
     $("#horizontalTab ul li a").on('click', function (event) {
         changeTab(event);
     });
