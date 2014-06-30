@@ -353,7 +353,7 @@ span.green{
 	.thirdMessage{
 		background: url(../images/text-bg-10.png) no-repeat;
 		bottom: 103px;
-      padding: 11px 14px 26px 28px;
+      	padding: 11px 14px 26px 28px;
 	    position: absolute;
 	    right: 20px;
 	    width: 220px;
@@ -367,6 +367,7 @@ span.green{
 	    top: 175px;
 	    width: 140px;
 	    z-index: 10;
+	    bottom: 0px;
 	}
 	.lastMessage{
 		background: url(../images/text-bg-12.png) no-repeat;
