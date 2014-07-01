@@ -591,6 +591,7 @@ $(document).ready(function () {
 			"padding-top" : "500px"
 		});
 	}
+	
     $(window).resize(function() {
     	var windowWidth = parseInt($(window).width());
     	if(windowWidth<768) {
@@ -604,7 +605,18 @@ $(document).ready(function () {
 			$(".thumb").css({
 				"padding-top" : "500px"
 			});
-    	}
+    	}else{
+			$("#tab-1,#tab-4").css({
+					"min-height" : ""
+			});
+
+			$("div[id='tab-2']").css({
+				"min-height" : ""
+			});
+			$(".thumb").css({
+				"padding-top" : ""
+			});
+		}
     });
 });
 $(window).load(function () {
@@ -625,6 +637,7 @@ $(window).load(function () {
 					$(".secondStep").css({
 						"display" : "block",
 					});
+					//$(".secondStep").show();
 					$("#horizontalTab ul li a[href='#tab-1']").trigger('click');
 					var secondStepWidth = $(".secondStep").width();
 					$(".secondStep").css({
