@@ -60,16 +60,21 @@ span.green{
 	background: linear-gradient(to right,  rgba(63,165,53,1) 0%,rgba(63,165,53,1) 95%,rgba(107,176,35,1) 95%,rgba(107,176,35,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fa535', endColorstr='#6bb023',GradientType=1 );
 	border-radius: 20px;
+	margin:0 auto;
+	overflow:hidden;
 }
 .wrapAll{
 	padding: 2.5% 5% 5%;
 }
 .thumb ul{
 	text-align: center;
+	position:relative;
+	z-index:15;
 }
 .thumb ul li{
 	display: inline-block;
 	text-align: center;
+	cursor:pointer;
 }
 .firstSlider{
 	position: relative;
@@ -194,6 +199,7 @@ span.green{
 		min-height: 428px;
 		position: relative;
 		float: left;
+		z-index:10;
 	}
 	.image01 {
 		left: 21px;
